@@ -5,6 +5,14 @@ this application is for developers to share bits of codes with other developers.
 It works in a similar fashion as in any social media in that you share comment like and setup bio.
 
 
+link to backend https://env-3746005.jelastic.metropolia.fi/
+link to frontend https://nostalgic-agnesi-e5b8b2.netlify.app/login
+
+# steps-
+click the link to the frontend and signup for a new account after which you can test the functionalities of the app :)
+back end can also be tested with postman or firecamp using the backend link provided above
+
+
 # backend 
 
   - "apollo-server-express":
@@ -47,13 +55,4 @@ It works in a similar fashion as in any social media in that you share comment l
   -"subscriptions-transport-ws"
   
 
-
-
-
-link to backend https://env-3746005.jelastic.metropolia.fi/
-link to frontend https://nostalgic-agnesi-e5b8b2.netlify.app/login
-
-steps-
-click the link to the frontend and signup for a new account after which you can test the functionalities of the app :)
-back end can also be tested with postman or firecamp using the backend link provided above
 
