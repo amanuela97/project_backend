@@ -5,8 +5,8 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "devStart": "nodemon app.js",
-    "preinstall": "npx npm-force-resolutions"
+     "test": "node app.js",
+    "start": "node app.js"
   },
   "author": "Amanuel Ayezabu",
   "license": "ISC",
