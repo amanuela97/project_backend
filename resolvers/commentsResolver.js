@@ -1,0 +1,54 @@
+'use strict';
+import pkk from 'apollo-server-express';
+const { AuthenticationError, UserInputError } = pkk;
+import  auth from '../utils/auth.js';
+import postModel from '../models/post.js';
+
+export default {
+  Mutation: {
+    createComment: async (_, {  body, postId }, {user}) => {
+      //check if authenticated
+      auth(user);
+      if (body.trim() === '') {
+        throw new UserInputError('Empty comment', {
+          errors: {
+            body: 'Comment body must not be empty'
+          }
+        });
+      }
+
+      const post = await postModel.findById(postId);
+
+      if (post) {
+        post.comments.unshift({
+          body,
+          username: user.username,
+          createdAt: new Date(),
+          userID: user.id,
+        });
+        await post.save();
+        return post;
+      } else throw new UserInputError('Post not found');
+    },
+    async deleteComment(_, { postId, commentId }, {user}) {
+      //check if authenticated
+      auth(user);
+
+      const post = await postModel.findById(postId);
+
+      if (post) {
+        const commentIndex = post.comments.findIndex((c) => c.id === commentId);
+
+        if (post.comments[commentIndex].username === user.username) {
+          post.comments.splice(commentIndex, 1);
+          await post.save();
+          return post;
+        } else {
+          throw new AuthenticationError('Action not allowed');
+        }
+      } else {
+        throw new UserInputError('Post not found');
+      }
+    }
+  }
+};
