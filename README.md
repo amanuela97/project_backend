@@ -54,5 +54,8 @@ back end can also be tested with postman or firecamp using the backend link prov
   -"semantic-ui-react"
   -"subscriptions-transport-ws"
   
+  
+  For any questions you can contact me using the following email address- Amanuel.Ayezabu@metropolia.fi
+  
 
 
