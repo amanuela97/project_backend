@@ -7,7 +7,6 @@ import typeDefs from './schemas/index.js';
 import resolvers from './resolvers/index.js';
 import db from './db/db.js';
 import dotenv from 'dotenv';
-import localhost from './security/localhost.js';
 import production from './security/production.js';
 import helmet from "helmet";
 
@@ -40,12 +39,7 @@ app.use(helmet.hidePoweredBy());
 
 
     db.on('connected', () => {
-      process.env.NODE_ENV = process.env.NODE_ENV || "development";
-         if (process.env.NODE_ENV === "production") {
-            production(app, port);
-         } else {
-            localhost(app, 8000, port);
-         }
+         production(app, port);
     });
 
   } catch (e) {
