@@ -5,8 +5,8 @@ this application is for developers to share bits of codes with other developers.
 It works in a similar fashion as in any social media in that you share comment like and setup bio.
 
 
-link to backend https://env-3746005.jelastic.metropolia.fi/
-link to frontend https://nostalgic-agnesi-e5b8b2.netlify.app/
+link to backend [backend](https://code-share-apollo-server.herokuapp.com/)
+link to frontend [frontend](https://code-bits-share.netlify.app/login)
 
 # steps-
 click the link to the frontend and signup for a new account after which you can test the functionalities of the app :)
